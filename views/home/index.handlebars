@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-12">
+        <h3>Legnépszerűbb tanfolyamok</h3>
+        {{#each favourites}}
+            {{#if (isVisible this)}}
+                <div class="card m-2">
+                <img class="img-fluid" src="/images/{{ file }}" alt="Kép">
+                <div class="card-body">
+                    <h5 class="card-title">{{title}}</h5>
+                    <p class="card-text">{{teaser body 80}}</p>
+                    <a class="btn btn-outline-dark btn-sm" href="/course/{{slug}}">Bővebben</a>
+                </div>
+                <div class="card-footer">
+                    Tanfolyam indulása: {{ generateDate startDate 'YYYY-MM-DD'}}
+                </div>
+            </div>
+            {{/if}}
+        {{/each}}
+        <h3 class="mt-5">Tanfolyamok</h3>
+        {{#each courses}}
+            {{#if (isVisible this)}}
+                <div class="card m-2">
+                    <img class="img-fluid" src="/images/{{ file }}" alt="Kép">
+                    <div class="card-body">
+                        <h5 class="card-title">{{title}}</h5>
+                        <p class="card-text">{{teaser body 80}}</p>
+                        <a class="btn btn-outline-dark btn-sm" href="/course/{{slug}}">Bővebben</a>
+                    </div>
+                    <div class="card-footer">
+                        Tanfolyam indulása: {{ generateDate startDate 'YYYY-MM-DD'}}
+                    </div>
+                </div>
+            {{/if}}
+        {{/each}}
+        <ul class="pagination justify-content-center mt-3">
+            {{#pagination current=current pages=pages}}{{/pagination}}
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+{
+  "name": "vizsga-e-suli",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.5",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "bootstrap-icons": "^1.5.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "express-fileupload": "^1.2.1",
+    "express-handlebars": "^5.3.3",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.12.1",
+    "faker": "^5.5.3",
+    "handlebars": "^4.7.7",
+    "http-errors": "~1.6.3",
+    "method-override": "^3.0.0",
+    "moment": "^2.29.1",
+    "mongoose": "^5.13.6",
+    "mongoose-url-slugs": "^1.0.2",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.12",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
+  }
+}

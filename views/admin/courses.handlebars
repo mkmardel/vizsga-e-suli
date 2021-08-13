@@ -1,0 +1,32 @@
+<div class="card-body">
+    <div class="mb-4">
+        <h4>Tanfolyamok</h4>
+        <a class="btn btn-primary" style="float: right;" href="/admin/courses/create">Új tanfolyam</a>
+        <hr>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Kategória</th>
+                <th scope="col">Megnevezés</th>
+                <th scope="col">Részletek</th>
+                <th scope="col">Indulás</th>
+                <th scope="col">Műveletek</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each courses}}
+                <tr>
+                    <td>{{category.name}}</td>
+                    <td>{{title}}</td>
+                    <td>{{teaser body 30}}</td>
+                    <td>{{generateDate startDate "YYYY-MM-DD"}}</td>
+                    <td>
+                        <a class="btn btn-warning btn-sm" href="/admin/courses/edit/{{_id}}">Módosít</a>
+                        <a class="btn btn-danger btn-sm" href="/admin/courses/delete/{{_id}}">Töröl</a>
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,33 @@
+
+<div class="card-body">
+    <div class="mb-4">
+        <h4>Jelentkezők</h4>
+        <hr>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Tanfolyam</th>
+                <th scope="col">Név</th>
+                <th scope="col">E-mail cím</th>
+                <th scope="col">Születési dátum</th>
+                <th scope="col">Státusz</th>
+                <th scope="col">Műveletek</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each applicants}}
+                <tr>
+                    <td>{{course.title}}</td>
+                    <td>{{name}}</td>
+                    <td>{{email}}</td>
+                    <td>{{generateDate dateOfBirth 'YYYY. MM. DD.'}}</td>
+                    <td>{{getStatus status}}</td>
+                    <td>
+                        <a class="btn btn-warning btn-sm" href="/admin/applicants/edit/{{_id}}">Módosít</a>
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,47 @@
+<div class="col-12">
+    <h1>{{course.title}}</h1>
+    <p class="mt-5">
+        <strong>Kategória:</strong> <br>
+        {{course.category.name}} - {{course.category.body}}
+    </p>
+    <p class="mt-4">
+        <strong>Részletek:</strong> <br>
+        {{course.body}}
+    </p>
+    <p class="mt-4">
+        <strong>Tanfolyam indulása:</strong> <br>
+        {{generateDate course.startDate 'YYYY. MMMM. DD'}}
+    </p>
+        <p class="mt-4">
+        <strong>Résztvevők száma:</strong> <br>
+        {{course.applicants}}
+    </p>
+    <hr>
+    <p class="mt-4">
+        <strong>Jelentkezés:</strong> <br>
+        <form action="/home/applicants/create" method="post" class="mb-3">
+            <div class="form-group mb-2">
+                <label for="name">Tanfolyam azonosító:</label>
+                <input type="text" class="form-control noselect" id="course" name="course" value="{{course.slug}}">
+            </div>
+            <div class="form-group mb-2">
+                <label for="name">Név</label>
+                <input type="text" required class="form-control" id="name" name="name" placeholder="Add meg a neved">
+            </div>
+            <div class="form-group mb-2">
+                <label for="name">E-mail cím</label>
+                <input type="email" required class="form-control" id="email" name="email" placeholder="Add meg az e-mail címed">
+            </div>
+            <div class="form-group mb-2">
+                <label for="name">Születési dátum</label>
+                <input type="date" required class="form-control" id="dateOfBirth" name="dateOfBirth">
+            </div>
+            {{#if (isPassed course.startDate)}}
+                <button class="btn btn-success" type="submit" href="">Csatlakozom</button>
+            {{else}}
+                <button class="btn btn-warning" type="submit" href="">Jelentkezem</button>
+            {{/if}}
+        </form>
+    </p>
+    
+</div>

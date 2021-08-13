@@ -1,0 +1,29 @@
+
+<div class="card-body">
+    <div class="mb-4">
+        <h4>Kategóriák</h4>
+        <a class="btn btn-primary" style="float: right" href="/admin/categories/create">Új kategória</a>
+        <hr>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Megnevezés</th>
+                <th scope="col">Leírás</th>
+                <th scope="col">Műveletek</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each categories}}
+                <tr>
+                    <td>{{name}}</td>
+                    <td>{{teaser body 50}}</td>
+                    <td>
+                        <a class="btn btn-warning btn-sm" href="/admin/categories/edit/{{_id}}">Módosít</a>
+                        <a class="btn btn-danger btn-sm" href="/admin/categories/delete/{{_id}}">Töröl</a>
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

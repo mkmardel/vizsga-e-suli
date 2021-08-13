@@ -1,0 +1,26 @@
+<div class="col-12 text-center">
+    <div class="card w-100 mt-5">
+    <div class="card-header">Admin bejelentkezés</div>
+    <div class="card-body" style="text-align: left;">
+        <form action="/login" method="POST">
+            <label for="email">E-mail</label>
+            <input type="email"
+                   required
+                   class="form-control mb-3"
+                   name="email"
+                   placeholder="Adja meg e-mail címét"
+                   id="email">
+            <label for="password">Jelszó</label>
+            <input type="password"
+                   required
+                   class="form-control"
+                   name="password"
+                   id="password">
+            <button type="submit"
+                    class="btn btn-primary mt-3">
+                Belépés
+            </button>
+        </form>
+    </div>
+</div>
+</div>
